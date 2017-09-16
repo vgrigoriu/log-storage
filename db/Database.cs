@@ -25,6 +25,9 @@ namespace db
             var command = parts[0];
             switch (command)
             {
+                case "quit":
+                    Environment.Exit(0);
+                    break;
                 case "set":
                     await HandleSet(parts[1], parts[2]);
                     break;
@@ -47,6 +50,8 @@ Usage:
         stores the pair key, value
     get <key>
         return the value associated with the key
+    quit
+        quit this wonderful program
     help
         displays this help message");
         }
