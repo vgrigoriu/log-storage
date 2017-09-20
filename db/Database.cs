@@ -31,6 +31,9 @@ namespace db
                 case "set":
                     await HandleSet(parts[1], parts[2]);
                     break;
+                case "get":
+                    await HandleGet(parts[1]);
+                    break;
                 default:
                     DisplayHelp();
                     break;
@@ -40,6 +43,12 @@ namespace db
         private async Task HandleSet(string key, string value)
         {
             await db.SetAsync(key, value);
+        }
+
+        private async Task HandleGet(string key)
+        {
+            var value = await db.GetAsync(key);
+            Console.WriteLine(value);
         }
 
         private void DisplayHelp()

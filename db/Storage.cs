@@ -17,6 +17,6 @@ namespace db
             }
         }
 
-        public string Get(string key) => throw new NotImplementedException("No get yet");
+        public Task<string> GetAsync(string key) => throw new NotImplementedException("No get yet");
     }
 }
